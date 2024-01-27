@@ -48,155 +48,21 @@ type Etf struct {
 			Small  string `json:"Small"`
 			Micro  string `json:"Micro"`
 		} `json:"Market_Capitalisation"`
-		AssetAllocation struct {
-			Cash struct {
-				Long      string `json:"Long_%"`
-				Short     string `json:"Short_%"`
-				NetAssets string `json:"Net_Assets_%"`
-			} `json:"Cash"`
-			NotClassified struct {
-				Long      string `json:"Long_%"`
-				Short     string `json:"Short_%"`
-				NetAssets string `json:"Net_Assets_%"`
-			} `json:"NotClassified"`
-			StockNonUS struct {
-				Long      string `json:"Long_%"`
-				Short     string `json:"Short_%"`
-				NetAssets string `json:"Net_Assets_%"`
-			} `json:"Stock non-US"`
-			Other struct {
-				Long      string `json:"Long_%"`
-				Short     string `json:"Short_%"`
-				NetAssets string `json:"Net_Assets_%"`
-			} `json:"Other"`
-			StockUS struct {
-				Long      string `json:"Long_%"`
-				Short     string `json:"Short_%"`
-				NetAssets string `json:"Net_Assets_%"`
-			} `json:"Stock US"`
-			Bond struct {
-				Long      string `json:"Long_%"`
-				Short     string `json:"Short_%"`
-				NetAssets string `json:"Net_Assets_%"`
-			} `json:"Bond"`
+		AssetAllocation map[string]struct {
+			Equity             string `json:"Equity_%"`
+			RelativeToCategory string `json:"Relative_to_Category"`
 		} `json:"Asset_Allocation"`
-		WorldRegions struct {
-			NorthAmerica struct {
-				Equity             string `json:"Equity_%"`
-				RelativeToCategory string `json:"Relative_to_Category"`
-			} `json:"North America"`
-			UnitedKingdom struct {
-				Equity             string `json:"Equity_%"`
-				RelativeToCategory string `json:"Relative_to_Category"`
-			} `json:"United Kingdom"`
-			EuropeDeveloped struct {
-				Equity             string `json:"Equity_%"`
-				RelativeToCategory string `json:"Relative_to_Category"`
-			} `json:"Europe Developed"`
-			EuropeEmerging struct {
-				Equity             string `json:"Equity_%"`
-				RelativeToCategory string `json:"Relative_to_Category"`
-			} `json:"Europe Emerging"`
-			AfricaMiddleEast struct {
-				Equity             string `json:"Equity_%"`
-				RelativeToCategory string `json:"Relative_to_Category"`
-			} `json:"Africa/Middle East"`
-			Japan struct {
-				Equity             string `json:"Equity_%"`
-				RelativeToCategory string `json:"Relative_to_Category"`
-			} `json:"Japan"`
-			Australasia struct {
-				Equity             string `json:"Equity_%"`
-				RelativeToCategory string `json:"Relative_to_Category"`
-			} `json:"Australasia"`
-			AsiaDeveloped struct {
-				Equity             string `json:"Equity_%"`
-				RelativeToCategory string `json:"Relative_to_Category"`
-			} `json:"Asia Developed"`
-			AsiaEmerging struct {
-				Equity             string `json:"Equity_%"`
-				RelativeToCategory string `json:"Relative_to_Category"`
-			} `json:"Asia Emerging"`
-			LatinAmerica struct {
-				Equity             string `json:"Equity_%"`
-				RelativeToCategory string `json:"Relative_to_Category"`
-			} `json:"Latin America"`
+		WorldRegions map[string]struct {
+			Equity             string `json:"Equity_%"`
+			RelativeToCategory string `json:"Relative_to_Category"`
 		} `json:"World_Regions"`
-		SectorWeights struct {
-			BasicMaterials struct {
-				Equity             string `json:"Equity_%"`
-				RelativeToCategory string `json:"Relative_to_Category"`
-			} `json:"Basic Materials"`
-			ConsumerCyclicals struct {
-				Equity             string `json:"Equity_%"`
-				RelativeToCategory string `json:"Relative_to_Category"`
-			} `json:"Consumer Cyclicals"`
-			FinancialServices struct {
-				Equity             string `json:"Equity_%"`
-				RelativeToCategory string `json:"Relative_to_Category"`
-			} `json:"Financial Services"`
-			RealEstate struct {
-				Equity             string `json:"Equity_%"`
-				RelativeToCategory string `json:"Relative_to_Category"`
-			} `json:"Real Estate"`
-			CommunicationServices struct {
-				Equity             string `json:"Equity_%"`
-				RelativeToCategory string `json:"Relative_to_Category"`
-			} `json:"Communication Services"`
-			Energy struct {
-				Equity             string `json:"Equity_%"`
-				RelativeToCategory string `json:"Relative_to_Category"`
-			} `json:"Energy"`
-			Industrials struct {
-				Equity             string `json:"Equity_%"`
-				RelativeToCategory string `json:"Relative_to_Category"`
-			} `json:"Industrials"`
-			Technology struct {
-				Equity             string `json:"Equity_%"`
-				RelativeToCategory string `json:"Relative_to_Category"`
-			} `json:"Technology"`
-			ConsumerDefensive struct {
-				Equity             string `json:"Equity_%"`
-				RelativeToCategory string `json:"Relative_to_Category"`
-			} `json:"Consumer Defensive"`
-			Healthcare struct {
-				Equity             string `json:"Equity_%"`
-				RelativeToCategory string `json:"Relative_to_Category"`
-			} `json:"Healthcare"`
-			Utilities struct {
-				Equity             string `json:"Equity_%"`
-				RelativeToCategory string `json:"Relative_to_Category"`
-			} `json:"Utilities"`
+		SectorWeights map[string]struct {
+			Equity             string `json:"Equity_%"`
+			RelativeToCategory string `json:"Relative_to_Category"`
 		} `json:"Sector_Weights"`
-		FixedIncome struct {
-			EffectiveDuration struct {
-				Fund               string `json:"Fund_%"`
-				RelativeToCategory string `json:"Relative_to_Category"`
-			} `json:"EffectiveDuration"`
-			ModifiedDuration struct {
-				Fund               string `json:"Fund_%"`
-				RelativeToCategory string `json:"Relative_to_Category"`
-			} `json:"ModifiedDuration"`
-			EffectiveMaturity struct {
-				Fund               string `json:"Fund_%"`
-				RelativeToCategory string `json:"Relative_to_Category"`
-			} `json:"EffectiveMaturity"`
-			CreditQuality struct {
-				Fund               string `json:"Fund_%"`
-				RelativeToCategory string `json:"Relative_to_Category"`
-			} `json:"CreditQuality"`
-			Coupon struct {
-				Fund               string `json:"Fund_%"`
-				RelativeToCategory string `json:"Relative_to_Category"`
-			} `json:"Coupon"`
-			Price struct {
-				Fund               string `json:"Fund_%"`
-				RelativeToCategory string `json:"Relative_to_Category"`
-			} `json:"Price"`
-			YieldToMaturity struct {
-				Fund               string `json:"Fund_%"`
-				RelativeToCategory string `json:"Relative_to_Category"`
-			} `json:"YieldToMaturity"`
+		FixedIncome map[string]struct {
+			Fund               string `json:"Fund_%"`
+			RelativeToCategory string `json:"Relative_to_Category"`
 		} `json:"Fixed_Income"`
 		HoldingsCount int `json:"Holdings_Count"`
 		Top10Holdings map[string]struct {
