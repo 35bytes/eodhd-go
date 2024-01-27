@@ -28,7 +28,7 @@ func NewEodClient(baseUrl, apiKey string) EodClient {
 	}
 }
 
-func (c *EodClient) GetHistoricalPrice(symbol, exchange, start, end string) (price *Price, err error) {
+func (c *EodClient) GetHistoricalPrice(symbol, exchange, start, end string) (price []*Price, err error) {
 	if usExchange[exchange] {
 		exchange = "US"
 	}
@@ -47,7 +47,7 @@ func (c *EodClient) GetHistoricalPrice(symbol, exchange, start, end string) (pri
 		return nil, fmt.Errorf("unexpected status code %d", response.StatusCode)
 	}
 
-	var result *Price
+	var result []*Price
 
 	err = json.NewDecoder(response.Body).Decode(&result)
 	if err != nil {

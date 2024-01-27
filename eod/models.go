@@ -1,7 +1,7 @@
 package eod
 
 // Price represents the price at End of Day (EOD).
-type Price []struct {
+type Price struct {
 	Date          string  `json:"date"`
 	Open          float64 `json:"open"`
 	High          float64 `json:"high"`
